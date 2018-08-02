@@ -21,8 +21,8 @@
 			<div class="carousel-item active">
 				<div id="pokeTemplate1" class="col-8 offset-2 pokemonBox">
 					<div class="row">
-						<div  class="col-5 pokemonName">{{pokeName}}</div>
-						<div class="col-4 offset-3 PokemonNumber">#{{pokeNumber}}</div>
+						<div  class="col-5 pokemonName titles">{{pokeName}}</div>
+						<div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
 					</div>
 					<div class="row">
 						<div id="pokemonImageBox" class="col-12 text-center"><img src="" class="image" alt="" srcset=""></div>
@@ -33,48 +33,48 @@
 			<div class="carousel-item">
 				<div id="pokeTemplate2" class="col-8 offset-2 pokemonBox">
 					<div class="row">
-						<div class="col-5 pokemonName">{{pokeName}}</div>
-						<div class="col-4 offset-3 PokemonNumber">#{{pokeNumber}}</div>
+						<div class="col-5 pokemonName titles">{{pokeName}}</div>
+						<div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
 					</div>
 					<!--Tipos-->
 					<div class="row">
-						<div id="pokemonTypeBadges" class="col-12">type</div>
+						<div id="pokemonTypeBadges" class="col-12 titles">type</div>
 						<span id="pokeType1" class="badge badge-primary">{{type1}}</span>
 						<span id="pokeType2"  class="badge badge-secondary">{{type2}}</span>
 						<span id="pokeType3"  class="badge badge-success">{{type3}}</span>
 						<span id="pokeType4"  class="badge badge-success">{{type4}}</span>
 					</div>
-					<!--Debilidades-->
+					<!--sprites Title-->
 					<div class="row">
-						<div id="pokemonTypeBadges" class="col-12">{{weaks}}</div>
-						<span id="pokeType1" class="badge badge-primary">{{weak1}}</span>
-						<span id="pokeType2"  class="badge badge-secondary">{{weak2}}</span>
-						<span id="pokeType3"  class="badge badge-success">{{weak3}}</span>
-						<span id="pokeType4"  class="badge badge-success">{{weak4}}</span>
+						<div id="pokemonSpriteTitle" class="col-6  titles	">sprite_Default</div>
+						<div id="pokemonSpriteTitle" class="col-6  titles	">sprite_Shiny</div>
 					</div>
+					<!--sprites -->
+					<div class="row">
+						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" alt="" class="col-6">
+						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" alt="" class="col-6">
+					</div>
+
+					
 					<!--Detalles Titulos-->
 					<div class="row">
-						<div id="pokemonSpriteTitle" class="col-4 text-left	">sprite</div>
-						<div id="pokemonweightTitle" class="col-4 text-center">weight</div>
-						<div id="pokemonHeightTitles" class="col-4 text-right">height</div>
+						<div id="pokemonweightTitle" class="col-6  titles">weight</div>
+						<div id="pokemonHeightTitles" class="col-6  titles">height</div>
 					</div>
 					<!--Resultado de detalles-->
 					<div class="row">
-						<img id="pokemonSprite" class="col-4 text-left 	" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" width="50" height="50" srcset=""></a> 
-						<div id="pokemonWeight" class="col-4 text-center">{{weight}}</div>
-						<div id="pokemonHeight" class="col-4 text-right">{{heigh}}</div>
+						<div id="pokemonWeight" class="col-6 ">{{weight}}</div>
+						<div id="pokemonHeight" class="col-6 ">{{heigh}}</div>
 					</div>
 					<!--Detalles 2 Titulos-->
 					<div class="row">
-							<div id="pokemonAbilityTitle" class="col-4 text-left">Ability</div>
-							<div id="pokemonSecondaryAbilityTitle" class="col-4 text-center">Hidden</div>
-							<div id="pokemonHabitatTitle" class="col-4 text-right">Habitat</div>
+							<div id="pokemonAbilityTitle" class="col-6  titles">Ability</div>
+							<div id="pokemonSecondaryAbilityTitle" class="col-6 titles">Ability</div>
 					</div>
 					<!--Detalles 2 -->
 					<div class="row">
-							<div id="pokemonAbility" class="col-4 text-left">{{ability}}</div>
-							<div id="pokemonSecondaryAbility" class="col-4 text-center">{{hiddenAbility}}</div>
-							<div id="pokemonHabitat" class="col-4 text-right">{{habitat}}</div>
+							<div id="pokemonAbility" class="col-6">{{ability}}</div>
+							<div id="pokemonSecondaryAbility" class="col-6 ">{{Ability}}</div>
 					</div>
 			</div>				
 			
@@ -103,8 +103,9 @@
 	
 	
 	<!--Js Resources-->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="../js/app.js"></script>
 	<!--End Js Resources-->
 </body>

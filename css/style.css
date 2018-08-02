@@ -3,7 +3,7 @@ body{
     background-image: url("../assets/Base.png");
     background-size: cover;
     background-repeat: no-repeat;
-
+    
 }
 
 .pokemonBox{
@@ -12,6 +12,7 @@ body{
     margin-top: 40vw;
     border: 2px rgb(195, 245, 241) solid;
     overflow: auto;
+   
 }
 .pokeFinder{
     border-right: 2px black solid;
@@ -32,4 +33,9 @@ body{
     height:8rem;
 
     margin-top: 18vw;
+}
+.titles{
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: #41a6ff;
 }

@@ -1,19 +1,44 @@
 //bring all IDs
 const pokeTemplate1 = $('#pokeTemplate1').innerHTML;
 const pokeTemplate2 = $('#pokeTemplate2').innerHTML;
-const pokemonInput = $('#findingPokemon')
-// const pokeApiUrlGen = "https://pokeapi.co/api/v2/generation/1/"
-const pokeApiUrlPokemon = "http://pokeapi.co/api/v2/pokemon/"+pokemonInput;
+const pokemonInput = $('#findingPokemon');
 
-function getPokemon() {
-    $.getJSON(pokeApiUrlPokemon, function(data){
-        console.log(data);
-    })
+//callingPokemons
+
+function getPokemon(search) { 
+    let pokeApiUrlPokemon = "https://pokeapi.co/api/v2/pokemon/"+ search;
+    $.ajax({
+        url: pokeApiUrlPokemon,
+        type: "GET",
+        crossDomain: true,
+        }).done(function(response) {
+            console.log(response);
+            filling(response);
+        });
 }
 
-// $.getJSON(pokeApiUrl, function(data){
-//     console.log(data);
-// })
+//filling spaces
+function filling (response){
+    $.each(response, function(){
+        
+    })
+
+}
+
+
+    
+//input search
+$(document).ready(function() {
+    $('#searchButton').click(function(){
+        var search = $('#findingPokemon').val();
+        console.log(search);
+        getPokemon(search)
+    
+    })
+});
+
+
+
 //filling all templates
 // function getPokemon(e){
 //     for (const key in e) {
@@ -26,19 +51,3 @@ function getPokemon() {
 //        pokemonBox.innerHTML+=filled;
 //       }
 // }
-    
-//input search
-$(document).ready(function(inputval) {
-    $('#searchButton').click(function(){
-        let searchTxt = pokemonInput.val;
-        console.log(searchTxt);
-        
-        // $.each(data.pokemon_species, function(){
-        //     if(pokemon_species.name == searchTxt){
-        //         const name = pokemon_species.name
-        //     }
-        // })
-    
-    })
-    getPokemon(inputval);
-});
