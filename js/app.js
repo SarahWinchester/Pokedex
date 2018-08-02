@@ -1,7 +1,6 @@
 //bring all IDs
-const pokeTemplate1 = $('#pokeTemplate1').innerHTML;
-const pokeTemplate2 = $('#pokeTemplate2').innerHTML;
-const pokemonInput = $('#findingPokemon');
+
+let pokemonInput = $('#findingPokemon');
 
 //callingPokemons
 
@@ -11,29 +10,39 @@ function getPokemon(search) {
         url: pokeApiUrlPokemon,
         type: "GET",
         crossDomain: true,
-        }).done(function(response) {
-            console.log(response);
-            filling(response);
-        });
+    }).done(function(response) {
+        console.log(response);
+        filling(response , search);
+    });
 }
 
 //filling spaces
-function filling (response){
-    $.each(response, function(){
+function filling (response, search){
+    console.log(response);
+    console.log(response.name);
+    console.log(response.id);
+    let pokeTemplate1 = $('#pokemonBox1');
+    console.log(pokeTemplate1);
+    let initialTemplate = "";
+    initialTemplate += pokeTemplate1.replace("{{pokeName}}",response.name)
+                                .replace("{{pokeId}}", response.id);      
+    pokeTemplate1.innerHTML = initialTemplate;
+
         
-    })
-
-}
-
-
+    }
     
+
+
+
+
 //input search
 $(document).ready(function() {
     $('#searchButton').click(function(){
         var search = $('#findingPokemon').val();
         console.log(search);
-        getPokemon(search)
-    
+        getPokemon(search);
+        
+        
     })
 });
 
@@ -46,7 +55,7 @@ $(document).ready(function() {
 //        console.log(key);
 //        let value = data[key];
 //        console.log(value);
-       
+
 //        filled += pokeTemplate1.replace("{{name}}", value.name)
 //        pokemonBox.innerHTML+=filled;
 //       }
