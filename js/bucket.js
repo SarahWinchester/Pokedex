@@ -72,7 +72,7 @@ function filling (response){
     <!--Resultado de detalles-->
     <div class="row">
     <div id="pokemonWeight" class="col-6 ">{{weight}}</div>
-    <div id="pokemonHeight" class="col-6 ">{{height}}</div>
+    <div id="pokemonHeight" class="col-6 ">{{heigh}}</div>
     </div>
     <!--Detalles 2 Titulos-->
     <div class="row">
