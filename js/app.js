@@ -25,7 +25,7 @@ function filling (response){
     <div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
     </div>
     <div class="row">
-    <div id="pokemonImageBox" class="col-12 text-center"><img height="250" width="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" class="image" alt="" srcset=""></div>
+    <div id="pokemonImageBox" class="col-12 text-center"><img height="250" width="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+response.id+`.png" class="image" alt="" srcset=""></div>
     </div>
     </div>`
     console.log(response);
@@ -54,13 +54,13 @@ function filling (response){
     </div>  
     <!--sprites Title-->
     <div class="row">
-    <div id="pokemonSpriteTitle" class="col-6  titles	">sprite_Default</div>
-    <div id="pokemonSpriteTitle" class="col-6  titles	">sprite_Shiny</div>
+    <div id="pokemonSpriteTitle" class="col-6  titles	">Normal</div>
+    <div id="pokemonSpriteTitle" class="col-6  titles	">Shiny </div>
     </div>
     <!--sprites -->
     <div class="row">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" alt="" class="col-6">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" alt="" class="col-6">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+response.id+`.png" alt="" class="col-6">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/`+response.id+`.png" alt="" class="col-6">
     </div>
     
     
@@ -105,7 +105,11 @@ function filling (response){
     .replace("{{height}}", response.height)
     .replace("{{ability}}" , response.abilities[0].ability.name)
     .replace("{{secondAbility}}", response.abilities[1].ability.name);
+
+    console.log(response.types); //object
+
     if (typeof response.types[0]  != "undefined") {
+        
         secondCarouselTemplateReplace = secondCarouselTemplateReplace.replace("{{type1}}", response.types[0].type.name);
     }
     if (typeof response.types[1]  != "undefined"){
