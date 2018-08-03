@@ -92,10 +92,6 @@ function filling (response){
     
     let secondCarouselTemplateReplace = pokeTemplateSecondCarousel.replace("{{pokeName}}",response.name)
     .replace("{{pokeId}}", response.id)
-    
-    // .replace("{{type2}}", response.types[1].type.name)
-    // .replace("{{type3}}", response.types[2].type.name)
-    // .replace("{{type4}}", response.types[3].type.name)
     .replace("{{weight}}", response.weight)
     .replace("{{height}}", response.height)
     .replace("{{ability}}" , response.abilities[0].ability.name)
@@ -107,7 +103,13 @@ function filling (response){
 
     for (let i = 0; i < (response.types).length; i++) {
         console.log("for");
-        $("#pokemonTypeBadges").append(`<span id="pokeType1" class="badge badge-primary">${response.types[i].type.name}</span>`);
+        // $("#pokemonTypeBadges").append(`<span class="badge ">${response.types[i].type.name}</span>`)
+
+            if(response.types[i].type.name == "electric"){
+                $("#pokemonTypeBadges").append(`<span class="badge electric"> ${response.types[i].type.name}</span>`);
+
+
+        }
     }                                    
 }
 //input search
