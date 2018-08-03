@@ -32,9 +32,7 @@ function filling (response){
     console.log(response.name);
     console.log(response.id);
     let initialTemplate = pokeTemplate.replace("{{pokeName}}",response.name)
-    .replace("{{pokeId}}", response.id)
-    // .replace("{{pokeSprite}}", response.sprite.front_default)
-    ;      
+    .replace("{{pokeId}}", response.id);      
     console.log(initialTemplate);
     $('#active-carousel').html(initialTemplate);
     
@@ -47,10 +45,7 @@ function filling (response){
     <!--Tipos-->
     <div class="row">
     <div id="pokemonTypeBadges" class="col-12 titles">type</div>
-    <span id="pokeType1" class="badge badge-primary">{{type1}}</span>
-    <span id="pokeType2"  class="badge badge-secondary">{{type2}}</span>
-    <span id="pokeType3"  class="badge badge-success">{{type3}}</span>
-    <span id="pokeType4"  class="badge badge-success">{{type4}}</span>
+
     </div>  
     <!--sprites Title-->
     <div class="row">
@@ -106,31 +101,15 @@ function filling (response){
     .replace("{{ability}}" , response.abilities[0].ability.name)
     .replace("{{secondAbility}}", response.abilities[1].ability.name);
 
-    console.log(response.types); //object
-
-    if (typeof response.types[0]  != "undefined") {
-        
-        secondCarouselTemplateReplace = secondCarouselTemplateReplace.replace("{{type1}}", response.types[0].type.name);
-    }
-    if (typeof response.types[1]  != "undefined"){
-        secondCarouselTemplateReplace = secondCarouselTemplateReplace.replace("{{type2}}", response.types[1].type.name); 
-    }
-    if (typeof response.types[2]  != "undefined"){
-        secondCarouselTemplateReplace = secondCarouselTemplateReplace.replace("{{type3}}", response.types[2].type.name);
-    }   
-    if (typeof response.types[3]  != "undefined"){
-        secondCarouselTemplateReplace = secondCarouselTemplateReplace.replace("{{type4}}", response.types[3].type.name);
-    }                
-    
-    
+    console.log(response.types); //object    
     console.log(secondCarouselTemplateReplace);
-    $('#carrouselItem').html(secondCarouselTemplateReplace);                                       
+    $('#carrouselItem').html(secondCarouselTemplateReplace);   
+
+    for (let i = 0; i < (response.types).length; i++) {
+        console.log("for");
+        $("#pokemonTypeBadges").append(`<span id="pokeType1" class="badge badge-primary">${response.types[i].type.name}</span>`);
+    }                                    
 }
-
-
-
-
-
 //input search
 $(document).ready(function() {
     $('#searchButton').click(function(){
