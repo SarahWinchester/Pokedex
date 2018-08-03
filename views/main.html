@@ -18,19 +18,20 @@
 			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		</ol>
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			<div class="carousel-item active" id="active-carousel">
 				<div id="pokemonBox1" class="col-8 offset-2 pokemonBox">
 					<div class="row">
 						<div  class="col-5 pokemonName titles">{{pokeName}}</div>
 						<div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
 					</div>
 					<div class="row">
-						<div id="pokemonImageBox" class="col-12 text-center"><img src="" class="image" alt="" srcset=""></div>
+						<div id="pokemonImageBox" class="col-12 text-center"><img height="250" width="250"src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" class="image" ></div>
 						</div>
 					</div>
-		    	</div>	
+				</div>
+			</div>
 		
-			<div class="carousel-item">
+			<div class="carousel-item" id="carrouselItem">
 				<div id="pokeTemplate2" class="col-8 offset-2 pokemonBox">
 					<div class="row">
 						<div class="col-5 pokemonName titles">{{pokeName}}</div>
@@ -76,9 +77,9 @@
 							<div id="pokemonAbility" class="col-6">{{ability}}</div>
 							<div id="pokemonSecondaryAbility" class="col-6 ">{{Ability}}</div>
 					</div>
-			</div>				
+				</div>				
 			
-		</div>
+			</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
