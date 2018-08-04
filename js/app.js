@@ -14,6 +14,18 @@ function getPokemon(search) {
         filling(response);
     });
 }
+function getAllPokemon() { 
+    let pokeApiUrlPokemon = "https://pokeapi.co/api/v2/pokemon/";
+    $.ajax({
+        url: pokeApiUrlPokemon,
+        type: "GET",
+        crossDomain: true,
+    }).done(function(responseMain) {
+        console.log(responseMain);
+        fillingMain(responseMain);
+    });
+}
+//All cards first 20 pokemon
 
 
 //filling spaces 
@@ -103,13 +115,60 @@ function filling (response){
 
     for (let i = 0; i < (response.types).length; i++) {
         console.log("for");
-        // $("#pokemonTypeBadges").append(`<span class="badge ">${response.types[i].type.name}</span>`)
-
             if(response.types[i].type.name == "electric"){
                 $("#pokemonTypeBadges").append(`<span class="badge electric"> ${response.types[i].type.name}</span>`);
-
-
-        }
+            }
+            if (response.types[i].type.name == "normal") {
+                $("#pokemonTypeBadges").append(`<span class="badge normal"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "fighting") {
+                $("#pokemonTypeBadges").append(`<span class="badge fighting"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "flying") {
+                $("#pokemonTypeBadges").append(`<span class="badge flying"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "poison") {
+                $("#pokemonTypeBadges").append(`<span class="badge poison"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "ground") {
+                $("#pokemonTypeBadges").append(`<span class="badge ground"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "rock") {
+                $("#pokemonTypeBadges").append(`<span class="badge rock"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "bug") {
+                $("#pokemonTypeBadges").append(`<span class="badge bug"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "ghost") {
+                $("#pokemonTypeBadges").append(`<span class="badge ghost"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "steel") {
+                $("#pokemonTypeBadges").append(`<span class="badge steel"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "fire") {
+                $("#pokemonTypeBadges").append(`<span class="badge fire"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "water") {
+                $("#pokemonTypeBadges").append(`<span class="badge water"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "grass") {
+                $("#pokemonTypeBadges").append(`<span class="badge grass"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "psychic") {
+                $("#pokemonTypeBadges").append(`<span class="badge psychic"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "ice") {
+                $("#pokemonTypeBadges").append(`<span class="badge ice"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "dragon") {
+                $("#pokemonTypeBadges").append(`<span class="badge dragon"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "dark") {
+                $("#pokemonTypeBadges").append(`<span class="badge dark"> ${response.types[i].type.name}</span>`);
+            }
+            if (response.types[i].type.name == "fairy") {
+                $("#pokemonTypeBadges").append(`<span class="badge fairy"> ${response.types[i].type.name}</span>`);
+            }                               
     }                                    
 }
 //input search
