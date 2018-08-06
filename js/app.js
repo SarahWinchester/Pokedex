@@ -58,11 +58,11 @@ function fillingMain (responseNameMain) {
             <div id="pokemonImageBox" class="col-12 text-center"><img height="250" width="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+((i)+1)+`.png" class="image" alt="" srcset=""></div>
             </div>
             </div>`
-            let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain}}",responseNameMain.results[i].name)
-                                        .replace("{{pokeIdMain19}}", (i)+1  );   
-                                    console.log((i)+1);   
+            let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain19}}",
+                responseNameMain.results[i].name).replace("{{pokeIdMain19}}", (i)+1);   
+            console.log((i)+1)
             console.log(mainTemplateForItems);
-            $('#onload-Item-Carrousel').html(mainTemplateForItems);
+            $('#onload-Item-Carrousel').append(mainTemplateForItems);
         
     }
 }
