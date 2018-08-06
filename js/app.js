@@ -49,7 +49,8 @@ function fillingMain (responseNameMain) {
     
     for (let i = 1; i < (responseNameMain.results).length; i++) {
             console.log(responseNameMain.results[i].name);       
-        let other19Pokemons = `<div class="col-8 offset-2 pokemonBox">
+        let other19Pokemons = `<div class="carousel-item">
+        <div class="col-8 offset-2 pokemonBox">
             <div class="row">
             <div  class="col-5 pokemonName titles">{{pokeNameMain19}}</div>
             <div class="col-4 offset-3 PokemonNumber titles">#{{pokeIdMain19}</div>
@@ -57,13 +58,14 @@ function fillingMain (responseNameMain) {
             <div class="row">
             <div id="pokemonImageBox" class="col-12 text-center"><img height="250" width="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+((i)+1)+`.png" class="image" alt="" srcset=""></div>
             </div>
+            </div>
             </div>`
             let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain}}",responseNameMain.results[i].name)
                                         .replace("{{pokeIdMain19}}", (i)+1  );   
                                     console.log((i)+1);   
             console.log(mainTemplateForItems);
-            $('#onload-Item-Carrousel').html(mainTemplateForItems);
-        
+            $('#carousel-pokemons').append(mainTemplateForItems);
+
     }
 }
 
