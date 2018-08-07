@@ -35,10 +35,11 @@ body{
 
     margin-top: 18vw;
 }
+
 .titles{
     font-family: 'VT323', monospace;
-    font-size: 1.3rem;
-    color: #41a6ff;
+    font-size: 2rem;
+    color: #2e87d4;
 }
 /*colors for the badges*/
 .electric{
