@@ -30,6 +30,7 @@ $(document).ready( function getAllPokemon() {
 
 //All cards first 20 pokemon reponse Main had all 20 first pokemon and response To main the info for each of them 
 function fillingMain (responseNameMain) {
+    // $("#carouselExampleIndicators").hide();
     // for (let i = 0; i< (responseNameMain.results).length ; i++) {
     //     console.log(responseNameMain.results[i].name);  
 
@@ -60,11 +61,13 @@ function fillingMain (responseNameMain) {
             </div>
             </div>
             </div>`
-            let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain}}",responseNameMain.results[i].name)
-                                        .replace("{{pokeIdMain19}}", (i)+1  );   
-                                    console.log((i)+1);   
+            let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain19}}",
+                responseNameMain.results[i].name).replace("{{pokeIdMain19}}", (i)+1);   
+            console.log((i)+1)
             console.log(mainTemplateForItems);
+
             $('#carousel-pokemons').append(mainTemplateForItems);
+
 
     }
 }
@@ -76,7 +79,8 @@ function fillingMain (responseNameMain) {
 //filling spaces 
 //first active carousel
 function filling (response){
-    let pokeTemplate =  `<div id="pokemonBox1" class="col-8 offset-2 pokemonBox">
+    let pokeTemplate = `<div class="carousel-item">
+    <div class="col-8 offset-2 pokemonBox">
     <div class="row">
     <div  class="col-5 pokemonName titles">{{pokeName}}</div>
     <div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
@@ -224,7 +228,7 @@ $(document).ready(function() {
         var search = $('#findingPokemon').val();
         console.log(search);
         getPokemon(search);
-        
+        $("#carouselExampleIndicators").hide();
         
     })
 });
