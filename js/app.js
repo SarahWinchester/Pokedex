@@ -30,6 +30,7 @@ $(document).ready( function getAllPokemon() {
 
 //All cards first 20 pokemon reponse Main had all 20 first pokemon and response To main the info for each of them 
 function fillingMain (responseNameMain) {
+    // $("#carouselExampleIndicators").hide();
     // for (let i = 0; i< (responseNameMain.results).length ; i++) {
     //     console.log(responseNameMain.results[i].name);  
 
@@ -222,7 +223,7 @@ $(document).ready(function() {
         var search = $('#findingPokemon').val();
         console.log(search);
         getPokemon(search);
-        
+        $("#carouselExampleIndicators").hide();
         
     })
 });
