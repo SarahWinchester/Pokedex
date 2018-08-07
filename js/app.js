@@ -75,7 +75,8 @@ function fillingMain (responseNameMain) {
 //filling spaces 
 //first active carousel
 function filling (response){
-    let pokeTemplate =  `<div id="pokemonBox1" class="col-8 offset-2 pokemonBox">
+    let pokeTemplate = `<div class="carousel-item">
+    <div class="col-8 offset-2 pokemonBox">
     <div class="row">
     <div  class="col-5 pokemonName titles">{{pokeName}}</div>
     <div class="col-4 offset-3 PokemonNumber titles">#{{pokeId}}</div>
