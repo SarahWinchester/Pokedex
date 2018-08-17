@@ -45,10 +45,12 @@ function fillingMain (responseNameMain) {
         $('#onload-Active-Carrousel').html(mainTemplateForActive);
     
     for (let i = 1; i < (responseNameMain.results).length; i++) {
+
             console.log(responseNameMain.results[i].name); 
         
            
             
+
         let other19Pokemons = `<div class="carousel-item">
         <div class="col-8 offset-2 pokemonBox">
             <div class="row">
@@ -62,8 +64,7 @@ function fillingMain (responseNameMain) {
             let mainTemplateForItems = other19Pokemons.replace("{{pokeNameMain19}}",responseNameMain.results[i].name)
                                     console.log((i)+1);   
             console.log(mainTemplateForItems);
-            $('#carousel-pokemons').append(mainTemplateForItems);
-            
+
     }
 }
 
