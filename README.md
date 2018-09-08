@@ -1,6 +1,6 @@
 # Pokemon
 
-![PokemonView](../assets/pokemon.jpg)
+![PokemonView](/assets/pokemon.jpg)
 
 
 Pokemon is a mobile app who can show you the first 20 pokemons but, you can  find also the pokemons by ID, that is , the number of the pokemon you are looking for.
